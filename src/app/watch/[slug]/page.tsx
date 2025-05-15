@@ -1,15 +1,13 @@
 import { notFound } from 'next/navigation'
 
-interface Props {
-  params: {
-    slug: string
-  }
+type Props = {
+  params: { slug: string }
 }
 
-export default function VideoPage({ params }: Props) {
+export default async function VideoPage({ params }: Props) {
   const { slug } = params
 
-  if (!slug) return notFound()
+  if (!slug) notFound()
 
   const videoUrl = `https://media.selahpools.com/video/upload/${slug}.mp4`
 
