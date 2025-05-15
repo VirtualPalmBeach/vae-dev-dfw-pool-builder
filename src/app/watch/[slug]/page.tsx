@@ -1,7 +1,9 @@
 import { notFound } from 'next/navigation'
 
-export default function VideoPage({ params }: { params: { slug: string } }) {
-  const slug = params.slug
+export const dynamic = 'force-dynamic'
+
+export default function Page({ params }: { params: { slug: string } }) {
+  const { slug } = params
 
   if (!slug) notFound()
 
