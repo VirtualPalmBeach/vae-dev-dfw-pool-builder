@@ -1,7 +1,3 @@
-import { notFound } from 'next/navigation'
-
-export const dynamic = 'force-dynamic'
-
 export default function Page({ params }: { params: { slug: string } }) {
   const { slug } = params
 
@@ -21,4 +17,3 @@ export default function Page({ params }: { params: { slug: string } }) {
     </main>
   )
 }
-
