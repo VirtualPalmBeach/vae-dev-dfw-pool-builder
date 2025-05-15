@@ -1,3 +1,7 @@
+// src/app/watch/[slug]/page.tsx
+
+import { notFound } from 'next/navigation'
+
 export default function Page({ params }: { params: { slug: string } }) {
   const { slug } = params
 
