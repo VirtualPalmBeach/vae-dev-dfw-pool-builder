@@ -1,11 +1,7 @@
 import { notFound } from 'next/navigation'
 
-type Props = {
-  params: { slug: string }
-}
-
-export default async function VideoPage({ params }: Props) {
-  const { slug } = params
+export default function VideoPage({ params }: { params: { slug: string } }) {
+  const slug = params.slug
 
   if (!slug) notFound()
 
@@ -23,3 +19,4 @@ export default async function VideoPage({ params }: Props) {
     </main>
   )
 }
+
