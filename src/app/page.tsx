@@ -6,8 +6,6 @@ import Header from '@/components/Header';
 import Container from '@/components/Container';
 import CallToAction from '@/components/CallToAction';
 
-export const revalidate = 30; // Check for new content every 30 seconds
-
 export default async function Home() {
   const homepage = await getHomepage();
   const navigation = await getNavigation();

@@ -1,5 +1,3 @@
-export const revalidate = 30; // Check for new content every 30 seconds
-
 export default function Page() {
   const videoUrl = 'https://media.selahpools.com/video/upload/v1747241796/zoelptpmr57f7csb0koc.mp4';
   
