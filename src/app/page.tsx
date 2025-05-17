@@ -1,10 +1,10 @@
 import { getHomepage, getNavigation, getSiteSettings } from '@/lib/api';
 import { notFound } from 'next/navigation';
-import Hero from '@/components/Hero';
-import Footer from '@/components/Footer';
-import Header from '@/components/Header';
-import Container from '@/components/Container';
-import CallToAction from '@/components/CallToAction';
+import { Hero } from '@/components/Hero';
+import { Footer } from '@/components/Footer';
+import { Header } from '@/components/Header';
+import { Container } from '@/components/Container';
+import { CallToAction } from '@/components/CallToAction';
 
 export default async function Home() {
   const homepage = await getHomepage();
