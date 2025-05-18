@@ -46,14 +46,15 @@ export default function VideoGallery({ initialVideos, totalPages }: Props) {
 
   return (
     <div>
-      <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
         {videos.map(video => (
           <video
             key={video.id}
             src={`${CLOUDINARY_BASE}${video.cloudinaryPublicId}.mp4`}
             poster={`${CLOUDINARY_BASE}${video.thumbnailUrl}`}
             controls
-            className="w-full h-auto rounded-lg"
+            playsInline
+            className="w-full h-auto rounded-lg transition-transform duration-200 ease-in-out hover:scale-105 animate-fadeIn"
           />
         ))}
       </div>
