@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 
 interface Video {
   id: string
-  publicId: string
+  cloudinaryPublicId: string
 }
 
 interface Props {
@@ -49,7 +49,7 @@ export default function VideoGallery({ initialVideos, totalPages }: Props) {
         {videos.map(video => (
           <video
             key={video.id}
-            src={`${CLOUDINARY_BASE}${video.publicId}.mp4`}
+            src={`${CLOUDINARY_BASE}${video.cloudinaryPublicId}.mp4`}
             controls
             className="w-full h-auto rounded-lg"
           />
