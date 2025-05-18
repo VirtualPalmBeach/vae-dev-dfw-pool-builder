@@ -52,6 +52,13 @@ interface Service {
   [key: string]: any;
 }
 
+interface Video {
+  id: string;
+  publicId: string;
+  siteKey: string;
+  [key: string]: any;
+}
+
 // API configuration
 const API_URL = process.env.PAYLOAD_PUBLIC_SERVER_URL || 'https://vae-payload-hq.payloadcms.app';
 const API_SECRET = process.env.PAYLOAD_SECRET;
@@ -152,6 +159,21 @@ export async function getSiteSettings(siteKey: string = DEFAULT_SITE_KEY): Promi
 // Fetch services
 export async function getServices(siteKey: string = DEFAULT_SITE_KEY): Promise<Service[]> {
   const data = await fetchFromPayload<Service>('/api/services', {}, siteKey);
-  
+
   return data?.docs || [];
+}
+
+// Fetch videos with pagination
+export async function getVideos(
+  page: number = 1,
+  limit: number = 9,
+  siteKey: string = DEFAULT_SITE_KEY
+): Promise<PayloadResponse<Video> | null> {
+  const data = await fetchFromPayload<Video>(
+    '/api/videos',
+    { page, limit },
+    siteKey
+  );
+
+  return data;
 }
