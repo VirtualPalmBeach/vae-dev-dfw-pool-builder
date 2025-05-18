@@ -55,6 +55,7 @@ interface Service {
 interface Video {
   id: string;
   cloudinaryPublicId: string;
+  thumbnailUrl: string;
   siteKey: string;
   [key: string]: any;
 }
@@ -171,7 +172,7 @@ export async function getVideos(
 ): Promise<PayloadResponse<Video> | null> {
   const data = await fetchFromPayload<Video>(
     '/api/videos',
-    { page, limit, fields: 'id,cloudinaryPublicId' },
+    { page, limit, fields: 'id,cloudinaryPublicId,thumbnailUrl' },
     siteKey
   );
 
